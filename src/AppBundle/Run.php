@@ -1,0 +1,129 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * Date: 23.01.2016
+ * Time: 22:16
+ */
+namespace AppBundle;
+use Symfony\Component\DomCrawler\Crawler;
+
+$xml = "<RECORDS>
+<record>
+<mrk>
+<m_0_4 len=\"5\">#####</m_0_4>
+<m_5_5 len=\"1\">n</m_5_5>
+<m_6_6 len=\"1\">a</m_6_6>
+<m_7_7 len=\"1\">m</m_7_7>
+<m_8_8 len=\"1\">#</m_8_8>
+<m_9_9 len=\"1\">#</m_9_9>
+<m_10_10 len=\"1\">2</m_10_10>
+<m_11_11 len=\"1\">2</m_11_11>
+<m_12_16 len=\"5\">#####</m_12_16>
+<m_17_17 len=\"1\">#</m_17_17>
+<m_18_18 len=\"1\">#</m_18_18>
+<m_19_19 len=\"1\">#</m_19_19>
+<m_20_23 len=\"4\">450 </m_20_23>
+</mrk>
+<FIELD.920>
+PAZK
+</FIELD.920>
+<FIELD.900>
+<SUBFIELD.B>05</SUBFIELD.B>
+</FIELD.900>
+<FIELD.102>
+RU
+</FIELD.102>
+<FIELD.101>
+rus
+</FIELD.101>
+<FIELD.919>
+<SUBFIELD.A>rus</SUBFIELD.A><SUBFIELD.N>02</SUBFIELD.N><SUBFIELD.K>PSBO</SUBFIELD.K>
+</FIELD.919>
+<FIELD.700>
+<SUBFIELD.A>Марценюк</SUBFIELD.A><SUBFIELD.B>М. А.</SUBFIELD.B><SUBFIELD.Y>ДА</SUBFIELD.Y><SUBFIELD.P>физический факультет, кафедра компьютерных систем и телекоммуникаций</SUBFIELD.P>
+</FIELD.700>
+<FIELD.210>
+<SUBFIELD.D>2007</SUBFIELD.D><SUBFIELD.A>Пермь</SUBFIELD.A>
+</FIELD.210>
+<FIELD.215>
+<SUBFIELD.A>107 с.</SUBFIELD.A>
+</FIELD.215>
+<FIELD.907>
+<SUBFIELD.C>ПК</SUBFIELD.C><SUBFIELD.A>20090116</SUBFIELD.A><SUBFIELD.B>Иванова</SUBFIELD.B>
+</FIELD.907>
+<FIELD.907>
+<SUBFIELD.C>ПК</SUBFIELD.C><SUBFIELD.A>20090611</SUBFIELD.A><SUBFIELD.B>Иванова</SUBFIELD.B>
+</FIELD.907>
+<FIELD.907>
+<SUBFIELD.C>ПК</SUBFIELD.C><SUBFIELD.A>20090623</SUBFIELD.A><SUBFIELD.B>Иванова</SUBFIELD.B>
+</FIELD.907>
+<FIELD.907>
+<SUBFIELD.C>ПК</SUBFIELD.C><SUBFIELD.A>20090630</SUBFIELD.A><SUBFIELD.B>Инзельберг</SUBFIELD.B>
+</FIELD.907>
+<FIELD.907>
+<SUBFIELD.A>20090909</SUBFIELD.A>
+</FIELD.907>
+<FIELD.907>
+<SUBFIELD.C>ПК</SUBFIELD.C><SUBFIELD.A>20091222</SUBFIELD.A><SUBFIELD.B>Иванова</SUBFIELD.B>
+</FIELD.907>
+<FIELD.675>
+004
+</FIELD.675>
+<FIELD.621>
+32.97
+</FIELD.621>
+<FIELD.606>
+<SUBFIELD.A>Вычислительная техника</SUBFIELD.A>
+</FIELD.606>
+<FIELD.606>
+<SUBFIELD.A>Вычислительная техника в целом</SUBFIELD.A>
+</FIELD.606>
+<FIELD.610>
+проекты
+</FIELD.610>
+<FIELD.610>
+разработка проектов
+</FIELD.610>
+<FIELD.610>
+управление разработкой проектов
+</FIELD.610>
+<FIELD.610>
+сетевой план
+</FIELD.610>
+<FIELD.907>
+<SUBFIELD.C>ПК</SUBFIELD.C><SUBFIELD.A>20100430</SUBFIELD.A><SUBFIELD.B>Трубина</SUBFIELD.B>
+</FIELD.907>
+<FIELD.908>
+М 299
+</FIELD.908>
+<FIELD.903>
+004/М 299-495562
+</FIELD.903>
+<FIELD.907>
+<SUBFIELD.C>ПК</SUBFIELD.C><SUBFIELD.A>20110609</SUBFIELD.A><SUBFIELD.B>Трубина</SUBFIELD.B>
+</FIELD.907>
+<FIELD.907>
+<SUBFIELD.C>ПК</SUBFIELD.C><SUBFIELD.A>20150316</SUBFIELD.A><SUBFIELD.B>nikita</SUBFIELD.B>
+</FIELD.907>
+<FIELD.907>
+<SUBFIELD.C>ПК</SUBFIELD.C><SUBFIELD.A>20150323</SUBFIELD.A><SUBFIELD.B>nikita</SUBFIELD.B>
+</FIELD.907>
+<FIELD.701>
+<SUBFIELD.A>Карпов</SUBFIELD.A><SUBFIELD.B>С. Б.</SUBFIELD.B><SUBFIELD.Y>ДА</SUBFIELD.Y><SUBFIELD.P>физический факультет, кафедра компьютерных систем и телекоммуникаций</SUBFIELD.P>
+</FIELD.701>
+<FIELD.200>
+<SUBFIELD.A>Управление разработкой проектов</SUBFIELD.A><SUBFIELD.E>учеб.-метод. пособие</SUBFIELD.E><SUBFIELD.F>М. А. Марценюк, С. Б. Карпов</SUBFIELD.F><SUBFIELD.G>Перм. гос. ун-т</SUBFIELD.G>
+</FIELD.200>
+<FIELD.907>
+<SUBFIELD.C>ПК</SUBFIELD.C><SUBFIELD.A>20150331</SUBFIELD.A><SUBFIELD.B>Селукова</SUBFIELD.B>
+</FIELD.907>
+<FIELD.905>
+<SUBFIELD.D>3</SUBFIELD.D><SUBFIELD.J>1</SUBFIELD.J><SUBFIELD.M>1</SUBFIELD.M><SUBFIELD.S>1</SUBFIELD.S><SUBFIELD.2>1</SUBFIELD.2>
+</FIELD.905>
+</record>
+</RECORDS>";
+
+$crawler = new Crawler($xml);
+foreach ($crawler as $domElement) {
+    var_dump($domElement->nodeName);
+}
