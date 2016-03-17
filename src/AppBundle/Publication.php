@@ -56,38 +56,44 @@ class Publication
 
     public function setAuthor($author)
     {
-        $this->author = mb_convert_encoding($author, "Windows-1251", "UTF-8");
+        //$this->author = mb_convert_encoding($author, "Windows-1251", "UTF-8");
+        $this->author = $author;
     }
 
     public function setLanguage($language)
     {
-        $this->language = mb_convert_encoding($language, "Windows-1251", "UTF-8");
+        //$this->language = mb_convert_encoding($language, "Windows-1251", "UTF-8");
+        $this->language = $language;
     }
 
     public function setTitle($title)
     {
-        $title = mb_convert_encoding($title, "Windows-1251", "UTF-8");
+        //$title = mb_convert_encoding($title, "Windows-1251", "UTF-8");
         $this->title = $title;
     }
 
     public function setFaculty($faculty)
     {
-        $this->faculty = mb_convert_encoding($faculty, "Windows-1251", "UTF-8");
+        //$this->faculty = mb_convert_encoding($faculty, "Windows-1251", "UTF-8");
+        $this->faculty = $faculty;
     }
 
     public function setCity($city)
     {
-        $this->city = mb_convert_encoding($city, "Windows-1251", "UTF-8");
+       // $this->city = mb_convert_encoding($city, "Windows-1251", "UTF-8");
+        $this->city = $city;
     }
 
     public function setVolume($volume)
     {
-        $this->volume = mb_convert_encoding($volume, "Windows-1251", "UTF-8");;
+        //$this->volume = mb_convert_encoding($volume, "Windows-1251", "UTF-8");
+        $this->volume = $volume;
     }
 
     public function setYear($year)
     {
-        $this->year = mb_convert_encoding($year, "Windows-1251", "UTF-8");;
+        //$this->year = mb_convert_encoding($year, "Windows-1251", "UTF-8");
+        $this->year = $year;
     }
 
 }

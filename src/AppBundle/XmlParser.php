@@ -40,7 +40,7 @@ class XmlParser
              $publication->setYear($record->getSubField('FIELD.210', 1));
              $publication->setCity($record->getSubField('FIELD.210', 2));
 
-             //var_dump($publication);
+             var_dump($publication);
         }
 
         //var_dump($crawler);
