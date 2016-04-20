@@ -9,12 +9,14 @@
 namespace AppBundle\Controller;
 
 use AppBundle\AppBundle;
+use AppBundle\RedisManager;
 use AppBundle\XmlParser;
 use AppBundle\MyStem;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\DomCrawler\Crawler;
 
+//require realpath("../../predis/autoload.php");
 
 class XmlParserController
 {
@@ -24,11 +26,17 @@ class XmlParserController
      */
     public function executeParser()
     {
+        echo __DIR__ . PHP_EOL;
+        echo realpath("../../predis/autoload.php");
         $xml = file_get_contents("../example.xml", "r");
         $parser = new XmlParser($xml);
         $parser->getRecords();
         $myStem = new MyStem();
-        $myStem->mystem('мурилка');
+        echo $myStem->mystem('апельсинки', 'ru');
+        $redisManager = new RedisManager();
+        $redis = $redisManager->connect();
+        $redis->set('key', 'tram');
+        echo $redis->get('key');
         return new Response(
             '<html><body></body></html>'
         );
