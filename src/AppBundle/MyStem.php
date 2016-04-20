@@ -8,12 +8,16 @@
 
 namespace AppBundle;
 
+
 class MyStem
 {
-    function mystem($q) {
-             $stem = stem($q);
-      echo 'stem . ' . $stem;
-//        return $q;//phpinfo();
+    function mystem($q, $lang) {
+        if ($lang == 'en')
+            $stem = stem($q);
+        else if ($lang == 'ru')
+            $stem = stem_russian_unicode("апельсины");
+            else $stem = '';
+     return $stem;
     }
 
 
