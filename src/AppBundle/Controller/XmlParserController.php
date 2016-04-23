@@ -26,17 +26,13 @@ class XmlParserController
      */
     public function executeParser()
     {
-        echo __DIR__ . PHP_EOL;
-        echo realpath("../../predis/autoload.php");
         $xml = file_get_contents("../example.xml", "r");
         $parser = new XmlParser($xml);
-        $parser->getRecords();
+        $publications  = $parser->getRecords();
         $myStem = new MyStem();
         echo $myStem->mystem('апельсинки', 'ru');
         $redisManager = new RedisManager();
-        $redis = $redisManager->connect();
-        $redis->set('key', 'tram');
-        echo $redis->get('key');
+        $redisManager->savePublication($publications[0]);
         return new Response(
             '<html><body></body></html>'
         );

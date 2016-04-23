@@ -6,7 +6,7 @@
  * Time: 0:42
  */
 
-namespace AppBundle;
+namespace AppBundle\Model;
 
 
 class Record

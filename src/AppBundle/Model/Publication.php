@@ -6,7 +6,7 @@
  * Time: 20:34
  */
 
-namespace AppBundle;
+namespace AppBundle\Model;
 
 
 class Publication
@@ -18,6 +18,7 @@ class Publication
     private $year;
     private $city;
     private $volume;
+    private $id;
 
     public function getAuthor()
     {
@@ -53,6 +54,18 @@ class Publication
     {
         return $this->volume;
     }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id)
+    {
+        //$this->author = mb_convert_encoding($author, "Windows-1251", "UTF-8");
+        $this->id = $id;
+    }
+
 
     public function setAuthor($author)
     {

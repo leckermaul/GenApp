@@ -15,7 +15,7 @@ class MyStem
         if ($lang == 'en')
             $stem = stem($q);
         else if ($lang == 'ru')
-            $stem = stem_russian_unicode("апельсины");
+            $stem = stem_russian_unicode($q);
             else $stem = '';
      return $stem;
     }

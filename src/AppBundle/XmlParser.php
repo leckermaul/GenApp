@@ -9,8 +9,8 @@
 namespace AppBundle;
 
 use Symfony\Component\DomCrawler\Crawler;
-use AppBundle\Publication;
-use AppBundle\Record;
+use AppBundle\Model\Publication;
+use AppBundle\Model\Record;
 
 class XmlParser
 {
@@ -35,15 +35,14 @@ class XmlParser
              $record = new Record($record);
              $publication = new Publication();
              $publication->setLanguage($record->getField('FIELD.102'));
+             $publication->setId($record->getField('FIELD.903'));
              $publication->setTitle($record->getSubField('FIELD.200', 1));
              $publication->setAuthor($record->getSubField('FIELD.200', 3));
              $publication->setYear($record->getSubField('FIELD.210', 1));
              $publication->setCity($record->getSubField('FIELD.210', 2));
-
-             var_dump($publication);
+             $publications[] = $publication;
         }
-
-        //var_dump($crawler);
+        return $publications;
     }
 
 
