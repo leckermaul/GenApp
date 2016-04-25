@@ -29,6 +29,7 @@ class RedisManager
 
     private function connect(){
         \Predis\Autoloader::register();
+echo realpath("../predis/autoload.php");
         try {
             $redis = new \Predis\Client();
         }

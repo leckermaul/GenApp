@@ -19,6 +19,4 @@ class MyStem
             else $stem = '';
      return $stem;
     }
-
-
 }

@@ -16,7 +16,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\DomCrawler\Crawler;
 
-//require realpath("../../predis/autoload.php");
 
 class XmlParserController
 {
@@ -26,6 +25,7 @@ class XmlParserController
      */
     public function executeParser()
     {
+        echo __DIR__ . PHP_EOL;
         $xml = file_get_contents("../example.xml", "r");
         $parser = new XmlParser($xml);
         $publications  = $parser->getRecords();
