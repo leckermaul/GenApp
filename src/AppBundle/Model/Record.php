@@ -13,19 +13,28 @@ class Record
 {
     private $record;
 
-    public function  __construct($record){
+    public function __construct($record)
+    {
         $this->record = $record;
     }
 
-    function getField($fieldName){
-        return $this->record->getElementsByTagName($fieldName)->item(0)->nodeValue;
+    function getField($fieldName)
+    {
+        try {
+            return $this->record->getElementsByTagName($fieldName)->item(0)->nodeValue;
+        } catch (\Exception $e) {
+            return null;
+        }
+
     }
 
-    function getFirstSubField($fieldName){
-        return $this->record->getElementsByTagName($fieldName)->item(0)->childNodes->item(1)->nodeValue;
-    }
-
-    function getSubField($fieldName, $num){
-        return $this->record->getElementsByTagName($fieldName)->item(0)->childNodes->item($num)->nodeValue;
+    function getSubField($fieldName, $num)
+    {
+        try{
+            return $this->record->getElementsByTagName($fieldName)->item(0)->childNodes->item($num)->nodeValue;
+        }
+        catch (\Exception $e){
+            return null;
+        }
     }
 }

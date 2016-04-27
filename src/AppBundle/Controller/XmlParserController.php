@@ -14,7 +14,6 @@ use AppBundle\XmlParser;
 use AppBundle\MyStem;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\DomCrawler\Crawler;
 
 
 class XmlParserController
@@ -29,10 +28,12 @@ class XmlParserController
         $xml = file_get_contents("../example.xml", "r");
         $parser = new XmlParser($xml);
         $publications  = $parser->getRecords();
+        var_dump($publications);
         $myStem = new MyStem();
         echo $myStem->mystem('апельсинки', 'ru');
         $redisManager = new RedisManager();
-        $redisManager->savePublication($publications[0]);
+        foreach ($publications as $publication)
+            $redisManager->savePublication($publication);
         return new Response(
             '<html><body></body></html>'
         );

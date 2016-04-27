@@ -37,9 +37,8 @@ class XmlParser
         $crawler = $crawler->first();
         foreach ($crawler as $domElement) {
            $records = $domElement->getElementsByTagName("record");
-            $publication = new Publication();
             foreach ($records as $record){
-                var_dump($record);
+                //var_dump($record);
                 $record = new Record($record);
                 $publication = new Publication();
                 $publication->setLanguage($record->getField('FIELD.102'));
@@ -52,22 +51,9 @@ class XmlParser
                 echo '<br><br>';
             }
 
-           var_dump($publications);
+         return $publications;
 
         }
     }
 
-    private function getField($record, $field) {
-        return $record->getElementsByTagName($field)->item(0)->nodeValue;
-    }
-
-
-
-
-    public function createPublication($record){
-        $publication = new Publication(
-
-        );
-        return $publication;
-    }
 }

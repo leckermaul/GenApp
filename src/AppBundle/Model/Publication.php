@@ -62,14 +62,14 @@ class Publication
 
     public function setId($id)
     {
-        //$this->author = mb_convert_encoding($author, "Windows-1251", "UTF-8");
-        $this->id = $id;
+        $this->id = trim($id);
     }
 
 
     public function setAuthor($author)
     {
         //$this->author = mb_convert_encoding($author, "Windows-1251", "UTF-8");
+
         $this->author = $author;
     }
 
