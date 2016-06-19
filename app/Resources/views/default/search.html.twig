@@ -1,0 +1,10 @@
+{# app/Resources/views/default/search.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h3>Введите тему заявки для поиска</h3>
+    <form>
+        <input name="data" type="text" value= '{{ searchString }}' size=100>
+        <input name="button" type="submit" value="Поиск">
+    </form>
+{% endblock %}
