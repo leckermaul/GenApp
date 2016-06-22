@@ -1,0 +1,31 @@
+{# app/Resources/views/default/search.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="form-group">
+        <form data-name="Email Form" id="email-form" name="email-form">
+            <div class="container">
+               <h2>Здравствуйте! Данный сервис предназначен для автоматизации генерации текста заявок</h2>
+                <br>
+                <div class="row">
+                    <div class="col-md-5">
+                        <h3 >Вы можете подобрать участников для гранта среди ученых со схожими научными интересами в своей области</h3>
+<br>
+                        <br>
+                        <div align="center">
+                        <input style=" font-size: 150%; background-color: midnightblue;" class="btn btn-primary" type="submit" value="Подобрать участников">
+                        </div></div>
+                <div class="col-md-2">
+</div>
+                    <div class="col-md-5">
+                        <h3>Если Вы уже выбрали участников для своего гранта, перейдите для генерации заявки</h3>
+<br>
+                        <br>
+                        <div align="center">
+                        <input  style="font-size: 150%; background-color: midnightblue;" class="btn btn-primary" type="submit" value="Сгенерировать заявку">
+                   </div> </div>
+                    </div>
+                </div>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,89 @@
+{# app/Resources/views/default/search.html.twig #}
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="container">
+    <h3>Настраиваемые параметры подбора ученых со схожими научными интересами</h3>
+    <br>
+    <div class = "row">
+        <div class="col-md-6">
+            <label for="Title"></label>
+        </div>
+
+        <div class="col-md-3">
+        </div>
+        <div align="center" class="col-md-3">
+            <span><i>Поддерживаемые расширения файлов</i></span>
+        </div>
+    </div>
+    <div class = "row">
+        <div class="col-md-6">
+            <label for="Title">Онтология предметной области научных интересов:</label>
+        </div>
+        <div class="col-md-6">
+        </div>
+        </div>
+        <br>
+        <div class = "row">
+            <div class="col-md-6">
+                <input width="10"  class="form-control" data-name="Title" id="Title" maxlength="254" name="Title" type="text">
+            </div>
+
+            <div  align="center" class="col-md-3">
+                <input class="btn btn-default" type="submit" value="Заменить">
+                <br>
+            </div>
+            <div align="center"  class="col-md-3">
+                <span> .owl</span>
+            </div>
+        </div>
+    <br>
+    <br>
+    <div class = "row">
+        <div class="col-md-6">
+            <label for="Title">Онтология структуры заявки на грант:</label>
+        </div>
+        <div class="col-md-6">
+        </div>
+    </div>
+        <div class = "row">
+            <div class="col-md-6">
+                <input width="10"  class="form-control" data-name="Title" id="Title" maxlength="254" name="Title" type="text">
+            </div>
+
+            <div align="center" class="col-md-3">
+                <input class="btn btn-default" type="submit" value="Заменить">
+                <br>
+            </div>
+            <div align="center" class="col-md-3">
+                <span> .owl</span>
+            </div>
+        </div>
+    <br>
+    <br>
+    <div class = "row">
+        <div class="col-md-6">
+            <label for="Title">Источник для подбора участников:</label>
+
+            <br>
+            <span>(стандарт для библиографических описаний ISO 2709):</span>
+        </div>
+        <div class="col-md-6">
+        </div>
+    </div>
+
+        <div class = "row">
+            <div class="col-md-6">
+                <input width="10"  class="form-control" data-name="Title" id="Title" maxlength="254" name="Title" type="text">
+            </div>
+
+            <div align="center" class="col-md-3">
+                <input class="btn btn-default" type="submit" value="Заменить">
+                <br>
+            </div>
+            <div align="center" class="col-md-3">
+                <span>.iso, xml</span>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

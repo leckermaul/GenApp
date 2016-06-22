@@ -2,9 +2,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h3>Введите тему заявки для поиска</h3>
-    <form>
-        <input name="data" type="text" value= '{{ searchString }}' size=100>
-        <input name="button" type="submit" value="Поиск">
-    </form>
+    <div class="form-group">
+        <form data-name="Email Form" id="email-form" name="email-form">
+            <div class="container">
+                <h3>Подбор ученых со схожими научными интересами</h3>
+                <br>
+                <label for="Title">Тема заявки:</label>
+                <br>
+                <div>
+                    <input width="300" autofocus="autofocus" class="form-control" data-name="Title" id="Title" maxlength="256" name="Title" placeholder="Например, &#39;Автоматизация генерации текста конкурсных заявок на основе баз данных унаследованных ИС&#39;" type="text">
+                    <br><div align="right"><a href="#">Настроить параметры</a></div>
+                </div>
+                <input  style=" font-size: 150%;background-color: midnightblue;" class="btn btn-primary" type="submit" value="Подобрать">
+            </div>
+        </form>
+    </div>
 {% endblock %}
