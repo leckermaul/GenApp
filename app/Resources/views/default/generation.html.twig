@@ -1,0 +1,58 @@
+{# app/Resources/views/default/search.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="form-group">
+        <form data-name="Email Form" id="email-form" name="email-form">
+            <div class="container">
+                <h3>Генерация заявки</h3>
+                <br>
+
+                <label for="Title">Тема заявки:</label>
+                <br>
+                <div>
+                    <input width="300" autofocus="autofocus" class="form-control" data-name="Title" id="Title" maxlength="256" name="Title" value="Автоматизация генерации текста конкурсных заявок на основе баз данных унаследованных ИС;" type="text">
+                </div>
+                <br>
+                <label for="Title">Выбранные участники:</label>
+                <div>
+                    <li class="list-group-item"><a>Р. А. Гадиатулин</a></li>
+                    <li class="list-group-item"><a href="">М. Г. Козырев</a></li>
+                    <br>
+                    <div align="right"><a href="#">Изменить</a></div>
+                </div>
+                <br>
+                <div>
+                    <label for="Title">Формат файла для сгенерированной заявки:</label>
+                    <br>
+                    <label>
+                        <input type="checkbox">
+                        .DOCX
+                    </label>
+                    <br>
+                    <label>
+                        <input type="checkbox">
+                        .DOC
+                    </label>
+                    <br>
+                    <label>
+                        <input type="checkbox">
+                        .PDF
+                    </label>
+                    <br>
+                </div>
+                <br>
+                <label for="Title">Директория для сохранения:</label>
+                <br>
+                <div>
+                    <input width="300" autofocus="autofocus" class="form-control" data-name="Title" id="Title" maxlength="256" name="Title" value="" type="text">
+                </div>
+
+                <input class="btn btn-default" type="submit" value="Выбрать">
+                <br>
+                <br>
+                <input  style=" font-size: 150%;background-color: midnightblue;" class="btn btn-primary" type="submit" value="Далее">
+            </div>
+        </form>
+    </div>
+{% endblock %}

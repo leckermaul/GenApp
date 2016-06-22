@@ -1,5 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+<h3>Вам подходят следующие авторы:</h3>
+        <br>
 <ul id="documents">
     {% for item in documents %}
-        <li><a href="">{{ item}}</a></li>
+        <div class="row">
+            <div class="col-md-4">
+        <li><a class="list-group-item" href="">{{ item.author()}}</a></li>
+            </div>
+            <div class="col-md-4">
+        <div class="checkbox disabled">
+            <label>
+                <input type="checkbox">
+                Выбрать для участия
+            </label>
+            </div>
+                </div>
+                <div class="col-md-4">
+                    <a >Все публикации автора</a>
+                </div>
+        </div>
     {% endfor %}
 </ul>
+        <br>
+        <input  style=" font-size: 150%;background-color: midnightblue;" class="btn btn-primary" type="submit" value="Сгенерировать заявку">
+        <br>
+        <br>
+
+    </div>
+{% endblock %}
